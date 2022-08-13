@@ -1,0 +1,156 @@
+img {
+  float: left;
+  max-width: 30%;
+  margin: 1rem;
+}
+
+.pictcontainer {
+  width: 100%;
+}
+
+.pictcontainer3 {
+  width: 50%;
+}
+
+.gridcontainer {
+  display: grid;
+  width: 100vw;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10% 3fr 20%;
+  grid-template-areas:
+    "header header header"
+    "main main sidebar"
+    "footer footer footer";
+  text-align: justify;
+}
+
+header {
+  background: rgb(128, 98, 103);
+  grid-area: header;
+}
+
+h1,
+h3 {
+  text-align: center;
+  font-size: 2vw;
+}
+
+header,
+footer {
+  text-align: center;
+  font-size: 1vw;
+  color: bisque;
+}
+
+.main {
+  background: pink;
+  display: grid;
+  grid-area: main;
+  grid-template-rows: 20% 1fr 1fr;
+  grid-template-areas:
+    "actors actors actors"
+    "section1 section2"
+    "section3 section3";
+  width: 65vw;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.above {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.section1,
+.section2 {
+  background: rgb(248, 232, 197);
+}
+
+.section3 {
+  background: rgb(248, 232, 197);
+  width: 100%;
+}
+
+.sidebar {
+  background: rgb(233, 188, 233);
+  width: 35vw;
+  font-size: 1vw;
+}
+
+article {
+  margin: 1rem;
+  font-size: 1vw;
+}
+
+footer {
+  background: rgb(128, 98, 103);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gridcontainer {
+    display: grid;
+    width: 100vw;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 3fr;
+    grid-template-areas:
+      "header header header"
+      "main main sidebar";
+    text-align: justify;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .pictcontainer {
+    width: 50%;
+  }
+
+  .gridcontainer {
+    display: grid;
+    width: 100vw;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 3fr 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar";
+  }
+
+  .main {
+    background: pink;
+    display: grid;
+    grid-area: main;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "actors"
+      "section1"
+      "section2"
+      "section3"
+      "sidebar";
+    width: 90vw;
+    gap: 1rem;
+  }
+
+  .above {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 100vw;
+  }
+
+  .footer {
+    display: none;
+  }
+}
